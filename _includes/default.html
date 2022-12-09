@@ -1,0 +1,29 @@
+---
+---
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>{{ title | default: user.displayName }}</title>
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="https://edwardtufte.github.io/tufte-css/tufte.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://edwardtufte.github.io/tufte-css/latex.css" crossorigin="anonymous">
+    <style>
+      * {
+        box-sizing: content-box;
+      }
+
+      .tag {
+        background-color: var(--color);
+        display: inline-block;
+        height: 1rem;
+        width: 1rem;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      {{ content | raw }}
+    </main>
+  </body>
+</html>

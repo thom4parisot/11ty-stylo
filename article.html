@@ -1,0 +1,33 @@
+---
+pagination:
+  data: articles
+  size: 1
+  alias: article
+permalink: "articles/{{ article._id }}.html"
+eleventyComputed:
+  title: "{{ article.title }}"
+---
+
+<article>
+  <h1>{{ article.title }}</h1>
+
+  <p>
+    <a href="{{ '/' | url }}" rel="home">
+      <span aria-hidden>🏠</span>
+      retour à la liste des articles
+    </a>
+  </p>
+
+  <section>{{ article.workingVersion.md | md }}</section>
+
+  <footer>
+
+  </footer>
+</article>
+
+<p>
+  <a href="#top">
+    <span aria-hidden>↑</span>
+    Retour en haut de page
+  </a>
+</p>

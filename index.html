@@ -1,0 +1,44 @@
+---
+title: Mes articles Stylo
+---
+
+<header>
+  <h1>
+    <a href="{{ '/' | url }}" rel="home">
+    {{ user.displayName }} sur Stylo
+    </a>
+  </h1>
+</header>
+
+<section role="list">
+  <p>
+    <strong style="margin-right: 1rem;">Mes tags</strong>
+
+    {% for tag in user.tags %}
+    <span role="listitem" style="margin-right: 1rem;">
+      <span class="tag" style="--color: {{ tag.color }}" aria-hidden></span>
+      {{ tag.name }}
+    </span>
+    {% endfor %}
+  </p>
+</details>
+
+<ol>
+{% for article in articles %}
+<li>
+  <h2>
+    <a href="{{ '/articles/' | append: article._id | append: '.html' | url }}" rel="permalink">{{ article.title }}</a>
+
+    <span role="list">
+      {% for tag in article.tags %}
+      <span role="listitem">
+        <span class="tag" style="--color: {{ tag.color }}" title="{{ tag.name }}" aria-hidden></span>
+      </span>
+      {% endfor %}
+    </span>
+
+    <time style="margin-left: 1rem;" datetime="{{ article.createdAt | date: '%Y-%m-%dT%H:%MZ' }}">{{ article.createdAt | date: '%d/%m/%Y' }}</time>
+  </h2>
+</li>
+{% endfor %}
+</ol>
