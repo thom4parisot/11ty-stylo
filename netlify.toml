@@ -1,0 +1,7 @@
+[build]
+command = "npm run build"
+publish = "_site"
+
+[[environment]]
+# À configurer dans Site Settings › Environment Variables
+# STYLO_GRAPHQL_TOKEN = "..."
