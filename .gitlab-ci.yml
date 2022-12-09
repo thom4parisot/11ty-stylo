@@ -1,0 +1,20 @@
+image: node:lts-alpine
+
+stages:
+  - deploy
+
+pages:
+  stage: deploy
+  environment:
+      name: test
+      url: $CI_PAGES_URL
+  before_script:
+    - npm clean-install --no-audit
+  script:
+    - npm run build -- --output=./public --pathprefix=${CI_PROJECT_DIR}
+  variables:
+    # À configurer dans Settings › CI/CD › Variables
+    STYLO_GRAPHQL_TOKEN: $STYLO_GRAPHQL_TOKEN
+  artifacts:
+    paths:
+      - public/
