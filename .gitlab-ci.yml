@@ -11,7 +11,7 @@ pages:
   before_script:
     - npm clean-install --no-audit
   script:
-    - npm run build -- --output=./public --pathprefix=${CI_PROJECT_DIR#*/}
+    - npm run build -- --output=./public --pathprefix=$(basename $CI_PROJECT_DIR)
   variables:
     # À configurer dans Settings › CI/CD › Variables
     STYLO_GRAPHQL_TOKEN: $STYLO_GRAPHQL_TOKEN
