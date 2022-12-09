@@ -43,6 +43,8 @@ jobs:
           # Implique de créer un nouveau "Repository Secret"
           # dans Settings > Secrets > Repository
           STYLO_GRAPHQL_TOKEN: ${{ secrets.STYLO_GRAPHQL_TOKEN }}
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
 
   # Deployment job
   deploy:
