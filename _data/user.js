@@ -33,7 +33,6 @@ module.exports = async function() {
   const { data } = await EleventyFetch(`${url}?__query=${body}`, {
     duration: '1d',
     type: 'json',
-    verbose: true,
     fetchOptions: {
       method: 'POST',
       headers,
