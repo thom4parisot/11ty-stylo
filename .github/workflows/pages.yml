@@ -38,7 +38,7 @@ jobs:
       - name: Install dependencies
         run: npm clean-install
       - name: Build
-        run: npm run build
+        run: npm run build -- --pathprefix=${GITHUB_REPOSITORY#*/}
         env:
           # Implique de créer un nouveau "Repository Secret"
           # dans Settings > Secrets > Repository
