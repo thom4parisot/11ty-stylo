@@ -33,12 +33,18 @@ _Pas encore_ quand un contenu est modifié.
 Voir [`.github/workflows/pages.yml`](.github/workflows/pages.yml).\
 Publié sur [`thom4parisot.github.io/11ty-stylo/`](https://thom4parisot.github.io/11ty-stylo/).
 
+<!-- https://docs.github.com/en/rest/actions/workflows?apiVersion=2022-11-28#create-a-workflow-dispatch-event -->
+
 ### GitLab Pages
 
 Voir [`.gitlab-ci.yml`](.gitlab-ci.yml).\
 Publié sur [`thom4parisot.frama.io/11ty-stylo/`](https://thom4parisot.frama.io/11ty-stylo/).
 
+<!-- https://docs.gitlab.com/ee/ci/triggers/ -->
+
 ### Netlify
 
 Voir [`netlify.toml`](netlify.toml).\
 Publié sur [`11ty-stylo-template.netlify.app`](https://11ty-stylo-template.netlify.app/).
+
+<!-- https://docs.netlify.com/configure-builds/build-hooks/ -->
