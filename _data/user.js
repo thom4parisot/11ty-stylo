@@ -30,7 +30,7 @@ module.exports = async function() {
     query: print(query)
   })
 
-  const { data } = await EleventyFetch(`${url}?__query=${body}`, {
+  const { data, errors } = await EleventyFetch(`${url}?__query=${body}`, {
     duration: '1d',
     type: 'json',
     fetchOptions: {
@@ -39,6 +39,11 @@ module.exports = async function() {
       body
     }
   })
+
+  if (errors) {
+    console.error(errors)
+    process.exit(1)
+  }
 
   return data.user
 };
